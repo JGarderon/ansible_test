@@ -5,6 +5,8 @@
       debug:
         msg: "bonjour-bonjour {{ inventory_hostname }} ! $USER et l'ip {{ ansible_eth0.ipv4.address }}"
     - debug: var=ansible_all_ipv4_addresses
+    - name: qui suis-je ?
+      shell: echo "$USER" 
  #   - name: je te donne des informations importantes 
  #       debug: var=ansible_all_ipv4_addresses
  #   - name: encore plus d'infos 
