@@ -8,7 +8,7 @@
     - name: qui suis-je ?
       shell: echo "$USER" 
     - name: Upgrade all apt packages
-          apt: upgrade=dist force_apt_get=yes
+      apt: upgrade=dist force_apt_get=yes
     - name: Install MySQL
       apt:
         name: "{{ item }}"
