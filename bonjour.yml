@@ -7,6 +7,9 @@
     - debug: var=ansible_all_ipv4_addresses
     - name: qui suis-je ?
       shell: echo "$USER" 
+    - name: erreur volontaire
+      shell: mysql -uroot -e "select 1+1;"
+
  #   - name: je te donne des informations importantes 
  #       debug: var=ansible_all_ipv4_addresses
  #   - name: encore plus d'infos 
