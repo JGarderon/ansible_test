@@ -1,0 +1,6 @@
+- name: bidule dit 'bonjour' 
+  hosts: all
+  tasks:
+    - name: message de bienvenue
+      debug:
+        msg: "bonjour-bonjour  {{ inventory_hostname }}!"
