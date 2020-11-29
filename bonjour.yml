@@ -11,7 +11,7 @@
       apt:
         name: "{{ item }}"
       with_items:
-        - python-mysqldb
+        #- python-mysqldb
         - mysql-server
     - name: erreur volontaire
       shell: mysql -uroot -e "select 1+1;"
