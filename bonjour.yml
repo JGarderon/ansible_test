@@ -7,6 +7,12 @@
     - debug: var=ansible_all_ipv4_addresses
     - name: qui suis-je ?
       shell: echo "$USER" 
+    - name: Install MySQL
+      apt:
+        name: "{{ item }}"
+      with_items:
+        - python-mysqldb
+        - mysql-server
     - name: erreur volontaire
       shell: mysql -uroot -e "select 1+1;"
 
