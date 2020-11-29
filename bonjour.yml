@@ -1,23 +1,31 @@
 - name: bidule dit 'bonjour' 
   hosts: all
+  
   tasks:
+
     - name: message de bienvenue
       debug:
         msg: "bonjour-bonjour {{ inventory_hostname }} ! $USER et l'ip {{ ansible_eth0.ipv4.address }}"
+
     - debug: var=ansible_all_ipv4_addresses
+
     - name: qui suis-je ?
-      shell: echo "$USER" 
+      shell: echo "$USER"
+
     - name: Upgrade all apt packages 
       become: true
       apt:
-        upgrade: yes
+        autoclean: yes
+        autoremove: yes
         update_cache: yes
-    - name: Install MySQL
-      apt:
-        name: "{{ item }}"
-        with_items:
-          #- python-mysqldb
-          - mysql-server
+        upgrade: safe
+
+    # - name: Install MySQL
+    #   apt:
+    #     name: "{{ item }}"
+    #     with_items:
+    #       #- python-mysqldb
+    #       - mysql-server
     # - name: erreur volontaire
     #   shell: mysql -uroot -e "select 1+1;" 
  #   - name: je te donne des informations importantes 
