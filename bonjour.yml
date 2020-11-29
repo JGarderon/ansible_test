@@ -7,10 +7,11 @@
     - debug: var=ansible_all_ipv4_addresses
     - name: qui suis-je ?
       shell: echo "$USER" 
-    - name: Upgrade all apt packages
-      apt: 
-        upgrade: dist
-        force_apt_get: True
+    - name: Upgrade all apt packages 
+      become: true
+      apt:
+        upgrade: yes
+        update_cache: yes
     - name: Install MySQL
       apt:
         name: "{{ item }}"
