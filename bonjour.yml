@@ -3,4 +3,8 @@
   tasks:
     - name: message de bienvenue
       debug:
-        msg: "bonjour-bonjour {{ inventory_hostname }} ! $USER"
+        msg: "bonjour-bonjour {{ inventory_hostname }} ! $USER et l'ip {{ ansible_eth0.ipv4.address }}"
+    - name: je te donne des informations importantes 
+        debug: var=ansible_all_ipv4_addresses
+    - name: encore plus d'infos 
+        debug: var=ansible_default_ipv4.address
