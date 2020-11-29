@@ -12,9 +12,9 @@
     - name: Install MySQL
       apt:
         name: "{{ item }}"
-      with_items:
-        #- python-mysqldb
-        - mysql-server
+        with_items:
+          #- python-mysqldb
+          - mysql-server
     - name: erreur volontaire
         shell: mysql -uroot -e "select 1+1;"
  #   - name: je te donne des informations importantes 
